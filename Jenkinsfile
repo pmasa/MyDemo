@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "bkshashi9/webapp"
+    registry = "pedromasa/cicd"
     registryCredential = 'dockerhub'
     dockerImage = ''
 
@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'ssh://git@18.139.110.189:2222/git-server/repos/webapp.git'
+        git 'ssh://git@github.com:pmasa/CICD.git'
       }
     }
     stage('Building Docker image') {
@@ -34,20 +34,20 @@ pipeline {
 
 stage ('Deploy') {
     steps{
-        sshagent(credentials : ['ubuntu']) {
-            sh 'docker pull bkshashi9/webapp:latest'
-            sh 'docker stop webapp'
-            sh 'docker rm webapp'
-            sh 'docker rmi bkshashi9/webapp:current || true'
-            sh 'docker tag bkshashi9/webapp:latest bkshashi9/webapp:current'
-            sh 'docker run -d --name webapp -p 8082:80 bkshashi9/webapp:latest'
+        sshagent(credentials : ['dockerhub']) {
+            sh 'docker pull pedromasa/cicd:latest'
+            sh 'docker stop cicd'
+            sh 'docker rm cicd'
+            sh 'docker rmi pedromasa/cicd:current || true'
+            sh 'docker tag pedromasa/cicd:latest pedromasa/cicd:current'
+            sh 'docker run -d --name cicd -p 8082:80 pedromasa/cicd:latest'
         }
     }
 }
 
 stage('Remove Unused docker image') {
       steps{
-sshagent(credentials : ['ubuntu']) {       
+sshagent(credentials : ['dockerhub']) {       
  sh "docker rmi $registry:$BUILD_NUMBER"
       }
 }
