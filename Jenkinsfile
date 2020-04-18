@@ -3,6 +3,7 @@ pipeline {
     registry = "pedromasa/cicd"
     registryCredential = 'dockerhub'
     dockerImage = ''
+
   }
   agent any
   stages {
@@ -44,10 +45,10 @@ stage ('Deploy') {
     }
 }
 
+      
     }
 
-      
-    }   
+   
   }
 
 
