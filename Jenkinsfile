@@ -8,7 +8,7 @@ pipeline {
  stages {
  stage('Cloning') {
  steps {
- git 'ssh://git@github.com:pmasa/CICD.git'
+ git 'ssh://git@github.com:pmasa/cicd.git'
  }
  }
  stage('Building Docker Image') {
