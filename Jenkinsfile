@@ -1,7 +1,7 @@
 pipeline {
   environment {
     registry = "pedromasa/cicd"
-    registryCredential = 'github_credentials'
+    registryCredential = 'dockerhub'
     dockerImage = ''
   }
   agent any
