@@ -1,7 +1,7 @@
 pipeline {
  environment {
  registry = "pedromasa/webapp"
- registryCredential = 'dockerhub'
+ registryCredential = 'dockerhub_id'
  dockerImage = ''
  }
  agent any
