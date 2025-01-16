@@ -1,2 +1,2 @@
 # CICD
-Webhook test
+Webhook tests
