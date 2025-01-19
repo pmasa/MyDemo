@@ -18,7 +18,7 @@ pipeline {
  }
  }
  }
- stage('Push Image to Docker Hub from Jenjinsfile') {
+ stage('Push Image to Docker Hub ') {
  steps{
  script {
  docker.withRegistry( '', registryCredential ) {
