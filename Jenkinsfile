@@ -6,7 +6,7 @@ pipeline {
  }
  agent any
  stages {
- stage('Cloning') {
+ stage('Cloning...') {
  steps {
  git 'https://github.com/pmasa/CICD.git'
  }
