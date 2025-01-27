@@ -11,6 +11,7 @@ pipeline {
  //git 'https://github.com/pmasa/CICD.git'
  }
  }
+ }
  stage('Building Docker Image ') {
  steps{
  script {
