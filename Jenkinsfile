@@ -30,7 +30,6 @@ pipeline {
       }
     }
 
-
 stage ('Deploy') {
     steps{
         sshagent(credentials : ['dockerhub']) {
@@ -45,7 +44,6 @@ stage ('Deploy') {
 }
 
     }
-
       
     }   
   }
