@@ -31,16 +31,8 @@ pipeline {
       }
     }
 
-
-stage ('Deploy') {
-    steps{
-
-        
-    }
-}
       
     }
-
    
   }
 
