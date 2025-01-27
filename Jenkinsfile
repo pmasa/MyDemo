@@ -32,17 +32,17 @@ pipeline {
     }
 
 
-stage ('Deploy') {
-    steps{
-        sh 'docker pull pedromasa/webapp:latest'
-        sh 'docker stop webapp'
-        sh 'docker rm webapp'
-        sh 'docker rmi pedromasa/webapp:current || true'
-        sh 'docker tag pedromasa/webapp:latest pedromasa/webapp:current'
-        sh 'docker run -d --name webapp -p 8082:80 pedromasa/webapp:latest'
+//stage ('Deploy') {
+//    steps{
+//        sh 'docker pull pedromasa/webapp:latest'
+//        sh 'docker stop webapp'
+//        sh 'docker rm webapp'
+//        sh 'docker rmi pedromasa/webapp:current || true'
+//        sh 'docker tag pedromasa/webapp:latest pedromasa/webapp:current'
+//        sh 'docker run -d --name webapp -p 8082:80 pedromasa/webapp:latest'
         
-    }
-}
+//    }
+//}
       
     }
 
