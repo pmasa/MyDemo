@@ -11,7 +11,7 @@ pipeline {
  //git 'https://github.com/pmasa/CICD.git'
  }
  }
- stage('Building Docker Image') {
+ stage('Building Docker Image ') {
  steps{
  script {
  //dockerImage = docker.build registry + ":$BUILD_NUMBER"
